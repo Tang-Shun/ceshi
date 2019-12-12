@@ -1,0 +1,487 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    height:100%;
+    width: 100%;
+    font-family: poppin,Tahoma,Arial,\5FAE\8F6F\96C5\9ED1,sans-serif;
+}    
+body{
+    height:100%;
+    width: 100%;
+    margin:0px;
+    padding:0px;
+    overflow-x: hidden;
+}
+/* 登录界面 */
+.login{
+    height:100%;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 100px;
+    box-sizing: border-box;
+    /* display: none; */
+}
+.loginlogo{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    width: 180px;
+    overflow: hidden;
+}
+.loginlogo-img:hover{
+    opacity: 1;
+}
+.loginlogo img{
+    height: 30px;
+    opacity: .3;
+    transition: .5s;
+}
+.loginmain{
+    z-index: 999;
+    width: 300px;
+    height: 200px;
+    background-image: url(../img/2.gif);
+    background-position-x: -565px;
+    background-position-y: -150px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: rgba(160, 136, 136) 2px 5px 10px;
+}
+.loginmain input{
+    padding: 5px 10px;
+    margin-top: 10px;
+    outline-color: rgb(73, 214, 219);
+    opacity: .6;
+}
+.loginmain input:focus {
+    opacity: 1;
+}
+.loginmain button{
+    cursor: pointer;
+    padding: 2px 2px;
+}
+.loginmain button:focus{
+    outline:none;
+}
+#i1{
+    color: rgb(73, 214, 219);
+}
+#i2{
+    color: #999;
+}
+.rad{
+    height: 50px;
+    width: 50px;
+    border: solid 1px #999;
+    border-radius: 50%;
+    text-align:center;
+    overflow: hidden;
+}
+.bt1{
+    margin-top: 10px;
+    width: 200px;
+    height: 30px;
+    border: none;
+    color: #fff;
+    border-radius: 2px;
+    font-size: 20px;
+    line-height: 20px;
+    transition: .5s;
+    background-color: rgb(73, 214, 219,0.8)
+}
+.bt1:hover{
+    background-color: rgb(73, 214, 219);
+}
+.img1{
+    height: 50px;  
+}
+.login-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,.35);
+    z-index: -1;
+}
+.loginbg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .6;
+    overflow: hidden;
+    background-position: center;
+    filter: blur(15px);
+    background-image: url(../img/11.jpg);
+}
+/* welcome */
+.welcome{
+    color: pink;
+    position: absolute;
+    margin-top: 150px;
+    left: 200px;
+    font:italic 60px Georgia, serif;
+    cursor: pointer;
+    display: none;
+    transition: .5s;
+}
+.welcome:hover{
+    color: #fff;
+}
+
+/*
+   响应式布局   pc端
+ */
+@media screen and (min-width:1000px){ 
+    .loginmain{
+        margin-top: 100px;
+        position: absolute;
+        right: 200px;
+    }
+    .welcome{
+        display: block;
+    }
+}
+
+
+/* 主页面 */
+ /* 导航栏 */
+.homepage {
+    display: none;
+}
+header .head {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background-color: #A8A8AA;
+}
+header .head .headPortrait {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    height: 100%;
+    width: 200px;
+    box-sizing: border-box;
+    padding: 0 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: green;
+}
+header .head .headPortrait .portrait {
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    background-color: #fff;
+    cursor: url('../img/headax.ico'),auto;
+}
+header .head .headPortrait .portrait img{
+    height: 100%;
+    width: 100%;
+}
+header .head .headMain {
+    height: 100%;
+    width: 1000px;
+    margin: auto;
+}
+header .head .headMain .choose{
+    height: 100%;
+    box-sizing: border-box;
+    width: 16.6666666%;
+    float: left;
+    cursor: pointer;
+    position: relative;
+    color: #fff;
+}
+header .head .headMain .choose.active {
+    background-color: #444;
+}
+
+/* 背景音乐 */
+header .headMusic{
+    top: 0;
+    right: 50px;
+    width: 200px;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+header .headMusic .musicAnimation {
+    width: 10px;
+    height: 10px;
+}
+header .headMusic .musicAnimation.active {
+    background: url(https://y.gtimg.cn/mediastyle/yqq/img/wave.gif?max_age=2592000&v=78979d47cc7dc55cab5d36b4c96168d5) 0 0 no-repeat;
+}
+header .headMusic .suspend:hover{
+    opacity: 1;
+    color: #fff;
+}
+header .headMusic .suspend{
+    color: rgba(225,225,225,.8);
+    text-decoration: none;
+    width: 21px;
+    height: 29px;
+    background-position: 0 0;
+    background-image: -webkit-image-set(url(https://y.gtimg.cn/mediastyle/yqq/img/player.png?max_age=2592000&v=f051617d8e8291de481d89af94f0cdbd&v=f051617d8e8291de481d89af94f0cdbd) 1x);
+    opacity: .8;
+    font-size: 14px;
+    border: none;
+}
+header .headMusic .suspend.active{
+    background-position: -30px 0;
+}
+header .headMusic .volume{
+    width: 80px;
+    padding-top: 5px;
+    height: 8px;
+    cursor: pointer;
+}
+header .headMusic .horn{
+    border: none;
+    width: 26px;
+    height: 21px;
+    background-position: 0 -144px;
+    opacity: .8;
+    text-decoration: none;
+    background-image: -webkit-image-set(url(https://y.gtimg.cn/mediastyle/yqq/img/player.png?max_age=2592000&v=f051617d8e8291de481d89af94f0cdbd&v=f051617d8e8291de481d89af94f0cdbd) 1x);
+}
+header .headMusic .horn.active {
+    background-position: 0 -182px;
+}
+header .headMusic .volume .horn_inner{
+    position: relative;
+    height: 2px;
+    background: rgba(255,255,255,.1);
+}
+header .headMusic .volume .horn_progress{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: rgba(255,255,255,.7);
+    width: 60%;
+}
+header .headMusic .volume .horn_progress .horn_dot{
+    top: -4px;
+    right: -4px;
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    filter: none;
+    position: absolute;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+}
+
+/* 实现鼠标指上去的变化 */
+header .head .headMain .choose::before {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    content: "";
+    width: 0;
+    transition: .2s linear width,left .2s linear;
+    height: 100%;
+    background-color: #666;
+    z-index: -1;
+}
+header .head .headMain .choose:hover::before   {
+    left: 0;
+    width: 100%;
+}
+header .head .headMain .choose:hover ~ .choose::before {
+    left: 0;
+}
+
+/* 主要内容部分 */
+section {
+    margin-top: 45px;
+    width: 1000px;
+    background-color: beige;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+section .panel {
+    display: none;
+}
+section .panel.active {
+    display: block;
+}
+
+/* 尾巴部分 */
+footer {
+    width: 100%;
+    height: 300px;
+    background-color: powderblue;
+}
+
+
+/* 2 */
+.panel2_top {
+    width: 100%;
+    height: 200px;
+}
+/* 轮播图 */
+.slideshow {
+    width: 1200px;
+    height: 400px;
+    margin-left: -100px;
+    /* margin-top: 50px; */
+    position: relative;
+}
+
+/* 轮播图盒子 */
+.slideshow .showBox {
+    width: 100%;
+    height: 360px;
+    position: relative;
+}
+
+/* 图片 */
+.slideshow .showBox li {
+    list-style: none;
+    width: 700px;
+    height: 300px;
+    position: absolute;
+    left: 250px;
+    right: 250px;
+    transition: all .5s ease-out;
+    opacity: 0;
+    cursor: pointer;
+}
+.slideshow .showBox li.now {
+    z-index: 1;
+    opacity: 1;
+    transform: scale3d(1.0, 1.2, 1.2);
+}
+.slideshow .showBox li.before{
+    transform: translateX(-250px);
+    opacity: .8;
+}
+.slideshow .showBox li.after{
+    transform: translateX(250px);
+    opacity: .8;
+}
+.slideshow .showBox li img {
+    height: 100%;
+    width: 100%;  
+    filter: grayscale(1);
+}
+.slideshow .showBox li.now img {
+    filter: grayscale(0);
+}
+/*图片修饰*/
+.slideshow .showBox li span {
+    height: 18px;
+    width: 35px;
+    padding-left: 10px;
+    border-radius: 7.5px 0 0 7.5px;
+    background-color: rgb(221, 58, 58);
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    right: -2px;
+    bottom: 20px;
+}
+
+/* 选择按钮 */
+.slideshow .showChoose {
+    height: 20px;
+    width: 180px;
+    margin: auto;
+}
+.slideshow .showChoose .chooseBox {
+    width: 30px;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.slideshow .showChoose .chooseBox li {
+    cursor: pointer;
+    list-style: none;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-bottom: 7px solid gold;
+    border-right: 10px solid transparent;
+    transform: rotate(36deg);
+    position: relative;
+    transition: transform .5s;
+}
+.slideshow .showChoose .chooseBox li:hover {
+    transform:rotate(320deg);
+}
+.slideshow .showChoose .chooseBox li.active:hover {
+    background-color: gold;
+}
+.slideshow .showChoose .chooseBox li.active {
+    border: none;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: pink;
+    transition: 0.2s;
+}
+.slideshow .showChoose .chooseBox li.active::before {
+    border: none;
+}
+.slideshow .showChoose .chooseBox li.active::after {
+    border: none;
+}
+.slideshow .showChoose .chooseBox li::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-bottom: 7px solid gold;
+    border-right: 10px solid transparent;
+    position: relative;
+    transform: rotate(74deg);
+    left:-10px;
+    top: -7px;
+}
+.slideshow .showChoose .chooseBox li::before{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-bottom: 7px solid gold;
+    border-right: 10px solid transparent;
+    position: relative;
+    transform: rotate(290deg);
+    left: -10px;
+    top: 0px;
+}
